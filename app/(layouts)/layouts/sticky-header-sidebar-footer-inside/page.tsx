@@ -5,7 +5,7 @@ import { Paragraph } from "@/components/layout/paragraph";
 import { StickyHeader } from "@/components/layout/sticky-header";
 import { StickySidebar } from "@/components/layout/sticky-sidebar";
 
-export default function Layout1() {
+export default function Layout() {
   return (
     <>
       <StickyHeader className="p-2">Sticky header</StickyHeader>
