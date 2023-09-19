@@ -15,7 +15,7 @@ export default function Layout() {
           <div>Sticky sidebar</div>
           <FakeWordList count={3} length={[4, 15]} capitalize />
         </StickySidebar>
-        <main className="min-h-[calc(100vh-2.5rem)]">
+        <main className="min-h-[calc(100vh-(2.5rem+1px))]">
           <Paragraph>Main content</Paragraph>
           <FakeParagraphs words={80} count={5} />
         </main>
