@@ -1,12 +1,11 @@
-# React + TypeScript + Next.js + Convex + Tailwind + ESLint + shadcn/ui
+# Convex + TypeScript + Next.js + Clerk + Tailwind + shadcn/ui
 
-Everything you need to build a full stack web app.
+This template provides a minimal setup to get Convex working, with TypeScript,
+ESLint and React using Vite. It uses Clerk for user authentication.
 
-All shadcn/ui (Radix) components are already included.
+Start by editing `convex/myFunctions.ts` and interact with your Next.js app.
 
-Additonally there are layout components in `components/layout` and typography components in `components/typography`.
-
-Check out example layouts by going to `http://localhost:3000/layouts`
+See Convex docs at https://docs.convex.dev/home
 
 ## Setting up
 
