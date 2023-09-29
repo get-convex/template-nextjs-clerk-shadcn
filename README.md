@@ -1,7 +1,6 @@
 # Convex + TypeScript + Next.js + Clerk + Tailwind + shadcn/ui
 
-This template provides a minimal setup to get Convex working, with TypeScript,
-ESLint and React using Vite. It uses Clerk for user authentication.
+This template provides a minimal setup to get Convex working with [Next.js](https://nextjs.org/). It uses [Clerk](https://clerk.dev/) for user authentication.
 
 Start by editing `convex/myFunctions.ts` and interact with your Next.js app.
 
