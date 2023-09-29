@@ -1,23 +1,54 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useMutation, useQuery } from "convex/react";
+import {
+  Authenticated,
+  Unauthenticated,
+  useMutation,
+  useQuery,
+} from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { Code } from "@/components/typography/code";
 import { Link } from "@/components/typography/link";
+import { SignInButton, UserButton } from "@clerk/clerk-react";
 
 export default function Home() {
-  const numbers = useQuery(api.myFunctions.listNumbers, { count: 10 });
+  return (
+    <main className="container max-w-2xl flex flex-col gap-8">
+      <h1 className="text-4xl font-extrabold my-8 text-center">
+        Convex + Next.js + Clerk Auth
+      </h1>
+      <Authenticated>
+        <SignedIn />
+      </Authenticated>
+      <Unauthenticated>
+        <div className="flex justify-center">
+          <SignInButton mode="modal">
+            <Button>Sign in</Button>
+          </SignInButton>
+        </div>
+      </Unauthenticated>
+    </main>
+  );
+}
+
+function SignedIn() {
+  const { viewer, numbers } =
+    useQuery(api.myFunctions.listNumbers, {
+      count: 10,
+    }) ?? {};
   const addNumber = useMutation(api.myFunctions.addNumber);
 
   return (
     <main className="container max-w-2xl flex flex-col gap-8">
-      <h1 className="text-4xl font-extrabold my-8 text-center">
-        Convex + Next.js
-      </h1>
+      <p>Welcome {viewer}!</p>
+      <p className="flex gap-4 items-center">
+        This is you:
+        <UserButton afterSignOutUrl="#" />
+      </p>
       <p>
-        Click the button and open this page in another window - this data is
-        persisted in the Convex cloud database!
+        Click the button below and open this page in another window - this data
+        is persisted in the Convex cloud database!
       </p>
       <p>
         <Button
