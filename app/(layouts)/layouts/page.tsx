@@ -1,3 +1,4 @@
+import { Code } from "@/components/typography/code";
 import { Link } from "@/components/typography/link";
 
 export default function Layouts() {
@@ -137,6 +138,11 @@ export default function Layouts() {
           </div>
         </div>
       </Link>
+
+      <p>
+        Done with layouts? Simply delete the <Code>app/(layouts)</Code>{" "}
+        directory.
+      </p>
     </main>
   );
 }

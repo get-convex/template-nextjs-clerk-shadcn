@@ -13,7 +13,7 @@ export class ErrorBoundary extends Component<
   }
 
   static getDerivedStateFromError(error: unknown) {
-    const errorText = "" + error;
+    const errorText = "" + (error as any).toString();
     if (
       errorText.includes("@clerk/clerk-react") &&
       errorText.includes("publishableKey")
