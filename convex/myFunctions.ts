@@ -18,7 +18,7 @@ export const listNumbers = query({
     //// See https://docs.convex.dev/database/reading-data.
     const numbers = await ctx.db.query("numbers").take(args.count);
     return {
-      viewer: (await ctx.auth.getUserIdentity())?.name,
+      viewer: (await ctx.auth.getUserIdentity())?.name ?? null,
       numbers: numbers.map((number) => number.value),
     };
   },
